@@ -18,7 +18,7 @@ public class Entity {
         this.identifier = identifier;
         healthPoints = 1;
         energyPoints = 1;
-        energyPoints = 0;
+        experiencePoints = 0;
 
         //All stats set to 1
         attributeStrength = attributeIntelligence = attributeDexterity = attributeBravery = attributeWisdom = attributeSpeed = 1;

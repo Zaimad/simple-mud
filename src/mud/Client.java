@@ -48,7 +48,7 @@ public class Client {
             while (running) {
                 content = "";
                 packOutgoing.setAddress(InetAddress.getByName(address));
-                System.out.print("Sending: ");
+                System.out.println("Sending: ");
                 packOutgoing.setData(scan.nextLine().getBytes());
                 packOutgoing.setPort(port); //THIS IS ESSENTIAL: THE PACKET NEEDS TO HAVE A DESTINATION
                 udpSocket.send(packOutgoing);

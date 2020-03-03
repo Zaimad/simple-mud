@@ -5,11 +5,12 @@ import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 import java.util.ArrayList;
 
-public class GraphicsHandler extends Room {
+public class GraphicsHandler {
 
     private final static int PADDING = 10;
     private Rectangle canvas;
     private EntityList entities;
+    ArrayList<Rectangle> entityShapes;
 
     public GraphicsHandler() {
         canvas = new Rectangle(PADDING,PADDING,600,400);
@@ -18,10 +19,11 @@ public class GraphicsHandler extends Room {
 
     public void redraw() {
         canvas.draw();
-        for (Rectangle shape : entities) {
-            shape.delete();
-            shape.fill();
+        for (int i = 0; i < entities.size(); i++) {
+            entityShapes.get(i).delete();
+            entityShapes.get(i).fill();
         }
+
     }
 
 
