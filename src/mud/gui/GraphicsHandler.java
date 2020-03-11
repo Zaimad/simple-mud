@@ -1,6 +1,5 @@
 package mud.gui;
 
-import mud.Room;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 import java.util.ArrayList;

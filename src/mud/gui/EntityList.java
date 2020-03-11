@@ -1,19 +1,18 @@
 package mud.gui;
 
 import mud.entities.Entity;
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class EntityList implements Iterable<String> {
 
-    ArrayList<String> entityNames;
-    ArrayList<Entity> entityObjects;
+    private ArrayList<String> entityNames;
+    private ArrayList<Entity> entityObjects;
 
     public EntityList(ArrayList<String> entityNames, ArrayList<Entity> entity) {
         this.entityNames = entityNames;
-        //this.entityShapes = entityShapes;
         this.entityObjects = entity;
     }
 
@@ -21,7 +20,6 @@ public class EntityList implements Iterable<String> {
         int index = entityNames.indexOf(name);
         if (index < 0) return false;
         entityNames.remove(index);
-        //entityShapes.remove(index);
         entityObjects.remove(index);
         return true;
     }
@@ -45,7 +43,6 @@ public class EntityList implements Iterable<String> {
     public boolean addEntity(String name, Entity entity) {
         if (entityNames.contains(name)) return false;
         entityNames.add(name);
-        //entityShapes.add(shape);
         entityObjects.add(entity);
         return true;
     }
@@ -55,8 +52,16 @@ public class EntityList implements Iterable<String> {
         return entityNames.iterator();
     }
 
+    /**
+     * This method is correctly implemented, afaik.
+     * @return a new EntityList with cloned properties
+     */
     public EntityList clone() {
-        return new EntityList(entityNames,entityObjects);
+        ArrayList<String> namesList = new ArrayList<>();
+        Collections.copy(namesList,entityNames);
+        ArrayList<Entity> entitiesList = new ArrayList<>();
+        Collections.copy(entitiesList,entityObjects);
+        return new EntityList(namesList,entitiesList);
     }
 
 }

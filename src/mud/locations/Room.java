@@ -1,4 +1,4 @@
-package mud;
+package mud.locations;
 
 import mud.actions.Action;
 import mud.gui.EntityList;
@@ -36,6 +36,13 @@ public class Room implements Serializable {
 
     }
 
+    public String getUniqueRoomId() {
+        return uniqueRoomId;
+    }
+
+    public String getRoomName() {
+        return roomName;
+    }
 
     public EntityList getEntities() {
         return entities;
